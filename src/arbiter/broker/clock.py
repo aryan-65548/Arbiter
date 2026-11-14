@@ -4,7 +4,7 @@ from time import monotonic
 from arbiter.core.ports import Clock
 
 
-class SystemClock:
+class SystemClock(Clock):
     """Production clock implementation."""
 
     def monotonic(self) -> float:

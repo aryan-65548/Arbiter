@@ -37,15 +37,9 @@ class RunBudgetReservationIn(APIModel):
 
 
 class ResourceRequestIn(APIModel):
-    concurrency: ConcurrencyRequestIn = Field(
-        default_factory=ConcurrencyRequestIn
-    )
-    provider_rate: ProviderRateRequestIn = Field(
-        default_factory=ProviderRateRequestIn
-    )
-    run_budget: RunBudgetReservationIn = Field(
-        default_factory=RunBudgetReservationIn
-    )
+    concurrency: ConcurrencyRequestIn = Field(default_factory=ConcurrencyRequestIn)
+    provider_rate: ProviderRateRequestIn = Field(default_factory=ProviderRateRequestIn)
+    run_budget: RunBudgetReservationIn = Field(default_factory=RunBudgetReservationIn)
 
     @model_validator(mode="after")
     def require_at_least_one_resource(self) -> "ResourceRequestIn":
